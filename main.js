@@ -34,6 +34,21 @@ var countriesArray = [
 // ************************Print to Dom************************ //
 
 function printToDom(domString, id){
-    document.getElementById(id).innerHTML = domString;
+    document.getElementById(id).innerHTML += domString;
 }
 
+// ************************Dom String*************************** //
+
+function countryDomString (array) {
+    for(var i = 0; i < array.length; i++){
+        var country = array[i];
+        var domString = "";
+        domString += "<div class='country-card'>";
+        domString += "<h3>" + country.title + "</h3>";
+        domString += "<input type='text' placeholder='Write your experience here'></input>";
+        domString += "<button class='submit'>Submit</button>";
+        domString += "</div>";
+        printToDom(domString, "card-holder");
+    }
+}
+countryDomString(countriesArray);
