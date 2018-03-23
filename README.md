@@ -1,11 +1,35 @@
-# Week 6 Homework:
+# Travel Diary
 
-## Studygroup Assignment(s)
-1. [Travel Diary](https://github.com/nss-nightclass-projects/exercise-vault/blob/master/travel-diary.md).  As a team you should plan out the application.  Each person should have their own repo with a github project that has project cards.  No need to make wireframes - use the ones callan added to the assignment.  Once your team knows what they need start coding individually and help each other out when you get stuck.  You will have some time to work on saturday but I want to see some code completed before class.  If you finish all assignment try some of the bonus goals.
-  
-## Individual Assignment(s)
-1. [Blog post #4](https://github.com/nss-nightclass-projects/homework/blob/master/blog.md):  Add this in blogs.js file to the blogs array you created as part of personal site #3.  Topics include: ES6, DOM Interaction, and markdown.
+## Setup
+1. Create a new repository on GitHub
+1. Connect the repository with a directory in single-page-apps/exercises
+1. Create a GitHub project and thoroughly plan out the project, breaking it into well-documented tickets.
+1. After pushing your base README.md to master, you should be working off branches
+1. Create an index.html, main.js and main.css and link them all together.
 
-1.  UPDATE CLASSTRACKER - log into classtracker and click on submit.  Make sure that all your assignments are in the correct place - if they are done put them in the done column.  If they are in progress make sure they have a github url.  There is no reason any of the assignments should be in the backlog column on saturday.
+## Technical Requirements
 
-1.  Github cleanup - to be assigned saturday
+1. Single responsibility prinicple: Each function should be responsible for one thing.
+1. No frameworks or libraries (Bootstrap/Materialize, jQuery, etc); everything is vanilla
+
+## Requirements
+
+1. Create an array of objects that represent places you've been or want to go. These objects should have a title, image and description. You need at least 5 unique objects in the array.
+1. Print each of the objects to the DOM in a "card" that also has it's own input box and submit button. There should be 3 "cards" per row.
+1. The final result of printing the array should look like the following mockup:
+![Travel Diary Mock Up Part 1](https://github.com/nss-nightclass-projects/exercise-vault/blob/master/TravelDiaryPt1.png?raw=true)
+4. The user should be able to type in the text box for a specific location, click the submit button on that card, and their entry should appear in a "diary" below the cards.
+	- The diary entry should contain the name of the location from the card the user was typing in (and hit the submit button in). It should also contain only the text that was in the text box from that card.
+	- The text box for that card should be cleared upon submission.
+5. The diary entries should build up as the user continues to type in cards and submit their entries. Newest entries should appear at the bottom. The final result will look like the following mockup:
+![Travel Diary Mock Up Part 2](https://github.com/nss-nightclass-projects/exercise-vault/blob/master/TravelDiaryPt2.png?raw=true)
+
+BONUS ALERT: Once a user has written about a place at least once, change the color of the card for that place.
+
+BONUS BONUS ALERT: Add a timestamp to the diary entries.
+
+BONUS BONUS BONUS ALERT: Users should be able to delete diary entries.
+
+![But wait there's more...](http://s2.quickmeme.com/img/a7/a78ae76da19c1a0f9e0e9b2f7e6229e70bd36cf7bc5b2f29b5f8900face50234.jpg)
+
+BONUS BONUS BONUS BONUS ALERT: Users should be able to edit their diary entries.
