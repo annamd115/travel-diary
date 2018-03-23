@@ -52,3 +52,13 @@ function countryDomString (array) {
     }
 }
 countryDomString(countriesArray);
+
+// ***********************Event Listeners************************ //
+
+var allTheButtons = document.getElementsByClassName('submit');
+
+for (let i = 0; i < allTheButtons.length; i++) {
+    allTheButtons[i].addEventListener('click', (e) => {
+        console.log('event!!!!!!!', e);
+    });
+}
