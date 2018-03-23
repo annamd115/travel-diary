@@ -30,3 +30,10 @@ var countriesArray = [
         description: "Canada is a North American country stretching from the U.S. in the south to the Arctic Circle in the north."
     }
 ];
+
+// ************************Print to Dom************************ //
+
+function printToDom(domString, id){
+    document.getElementById(id).innerHTML = domString;
+}
+
