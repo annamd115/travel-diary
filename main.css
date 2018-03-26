@@ -1,6 +1,6 @@
 body{
     position: absolute;
-    display: flex;
+    display: inline-flex;
 }
 #card-holder{
     position: relative;
