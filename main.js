@@ -43,11 +43,12 @@ function countryDomString (array) {
     for(var i = 0; i < array.length; i++){
         var country = array[i];
         var domString = "";
-        domString += "<div class='country-card'>";
-        domString += "<h3>" + country.title + "</h3>";
-        domString += "<input type='text' placeholder='Write your experience here'></input>";
-        domString += "<button class='submit'>Submit</button>";
-        domString += "</div>";
+        domString += `<div class='country-card'>`;
+        domString +=    `<h3> ${country.title}</h3>`;
+        domString +=    `<img src="${country.image}">`;
+        domString +=    `<input type='text' class='diaryEntry' placeholder='Write your experience here'></input>`;
+        domString +=    `<button class='submit'>Submit</button>`;
+        domString += `</div>`;
         printToDom(domString, "card-holder");
     }
 }
@@ -59,6 +60,7 @@ var allTheButtons = document.getElementsByClassName('submit');
 
 for (let i = 0; i < allTheButtons.length; i++) {
     allTheButtons[i].addEventListener('click', (e) => {
-        console.log('event!!!!!!!', e);
+        let diaryEntry = e.target.parentNode.children[2].value;
+        
     });
 }
