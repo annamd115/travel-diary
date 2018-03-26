@@ -1,0 +1,21 @@
+body{
+    position: absolute;
+    display: inline-flex;
+}
+#card-holder{
+    position: relative;
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: center;
+    margin: 0 auto;
+}
+.country-card{
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid lightblue;
+}
+.country-card img{
+    max-width: 250px;
+    max-height: 250px;
+}
