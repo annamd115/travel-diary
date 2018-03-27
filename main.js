@@ -46,7 +46,7 @@ function countryDomString (array) {
         domString += `<div class='country-card'>`;
         domString +=    `<h3> ${country.title}</h3>`;
         domString +=    `<img src="${country.image}">`;
-        domString +=    `<input type='text' class='diaryEntry' placeholder='Write your experience here'></input>`;
+        domString +=    `<form><textarea id='diaryEntry' placeholder='Write your experience here'></textarea></form>`;
         domString +=    `<button class='submit'>Submit</button>`;
         domString += `</div>`;
         printToDom(domString, "card-holder");
@@ -60,14 +60,15 @@ var allTheButtons = document.getElementsByClassName('submit');
 
 for (let i = 0; i < allTheButtons.length; i++) {
     allTheButtons[i].addEventListener('click', (e) => {
-        const diaryEntry = e.target.parentNode.children[2].value;
-        const countryName = e.target.parentNode.children[0].innerHTML;
+        const diaryEntry = e.target.parentNode.children[2].children[0].value;
         console.log(diaryEntry);
+        const countryName = e.target.parentNode.children[0].innerHTML;
         let domString = "";
         domString += `<div class="diary-card">`;
-        domString += `<h1> ${countryName} </h1>`;
-        domString += `<p> ${diaryEntry} </p>`;
+        domString +=    `<h1> ${countryName} </h1>`;
+        domString +=    `<p> ${diaryEntry} </p>`;
         domString += `</div>`;
-        printToDom(domString, "diary-container")
+        printToDom(domString, "diary-container");
     });
 }
+
