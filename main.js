@@ -62,6 +62,7 @@ for (let i = 0; i < allTheButtons.length; i++) {
     allTheButtons[i].addEventListener('click', (e) => {
         const diaryEntry = e.target.parentNode.children[2].value;
         const countryName = e.target.parentNode.children[0].innerHTML;
+        console.log(diaryEntry);
         let domString = "";
         domString += `<div class="diary-card">`;
         domString += `<h1> ${countryName} </h1>`;
