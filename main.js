@@ -56,26 +56,30 @@ countryDomString(countriesArray);
 
 // ***********************Event Listeners************************ //
 
-// const clearField = (el) => {
-//     document.getElementById("form").reset();
-// }
-
-let diaryArray = [];
+const clearField = (el) => {
+    const clear = document.getElementById("form").reset();
+}
 
 const allTheButtons = document.getElementsByClassName('submit');
 
-for (let i = 0; i < allTheButtons.length; i++) {
-    allTheButtons[i].addEventListener('click', (e) => {
-        const diaryEntry = e.target.parentNode.children[2].children[0].value;
-        console.log(diaryEntry);
-        const countryName = e.target.parentNode.children[0].innerHTML;
-        let domString = "";
-        domString += `<div class="diary-card">`;
-        domString +=    `<h1> ${countryName} </h1>`;
-        domString +=    `<p> ${diaryEntry} </p>`;
-        domString += `</div>`;
-        diaryArray.push(domString);
-        printToDom(diaryArray, "diary-container");
-    });
+const printDiaryCard = () => {
+    let diaryArray = [];
+    for (let i = 0; i < allTheButtons.length; i++) {
+        allTheButtons[i].addEventListener('click', (e) => {
+            const diaryEntry = e.target.parentNode.children[2].children[0].value;
+            console.log(diaryEntry);
+            const countryName = e.target.parentNode.children[0].innerHTML;
+            let domString = "";
+            domString += `<div class="diary-card">`;
+            domString +=    `<h1> ${countryName} </h1>`;
+            domString +=    `<p> ${diaryEntry} </p>`;
+            domString += `</div>`;
+            diaryArray.push(domString);
+            printToDom(diaryArray, "diary-container");
+            clearField();
+        });
+    }
 }
+printDiaryCard();
+
 
