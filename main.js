@@ -46,7 +46,7 @@ function countryDomString (array) {
         domString += `<div class='country-card'>`;
         domString +=    `<h3> ${country.title}</h3>`;
         domString +=    `<img src="${country.image}">`;
-        domString +=    `<form><textarea id='diaryEntry' placeholder='Write your experience here'></textarea></form>`;
+        domString +=    `<form id='form'><textarea id='diaryEntry' placeholder='Write your experience here'></textarea></form>`;
         domString +=    `<button class='submit'>Submit</button>`;
         domString += `</div>`;
         printToDom(domString, "card-holder");
@@ -56,7 +56,13 @@ countryDomString(countriesArray);
 
 // ***********************Event Listeners************************ //
 
-var allTheButtons = document.getElementsByClassName('submit');
+// const clearField = (el) => {
+//     document.getElementById("form").reset();
+// }
+
+let diaryArray = [];
+
+const allTheButtons = document.getElementsByClassName('submit');
 
 for (let i = 0; i < allTheButtons.length; i++) {
     allTheButtons[i].addEventListener('click', (e) => {
@@ -68,7 +74,8 @@ for (let i = 0; i < allTheButtons.length; i++) {
         domString +=    `<h1> ${countryName} </h1>`;
         domString +=    `<p> ${diaryEntry} </p>`;
         domString += `</div>`;
-        printToDom(domString, "diary-container");
+        diaryArray.push(domString);
+        printToDom(diaryArray, "diary-container");
     });
 }
 
