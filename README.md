@@ -4,7 +4,7 @@
 A travel diary app that allows you to write about your adventures. A color-changing border helps you keep track of the places you've been. Submit and delete diary entries.
 
 ## Screenshot
-![Travel Diary gif](https://media.giphy.com/media/6Eue88Qaq4rWAKFxiG/giphy.gif)
+<img src="https://media.giphy.com/media/6Eue88Qaq4rWAKFxiG/giphy.gif" width="70%">
 
 ## How to Run
 - cd to directory in terminal
