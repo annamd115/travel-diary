@@ -78,3 +78,6 @@ body{
     background: lightblue;
     border: 3px dotted lightsteelblue;
 }
+.visited{
+    border: 5px solid rgb(204,132,187);
+}
