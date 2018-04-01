@@ -46,7 +46,7 @@ function countryDomString (array) {
         domString += `<div class='country-card'>`;
         domString +=    `<h3> ${country.title}</h3>`;
         domString +=    `<img src="${country.image}">`;
-        domString +=    `<form class='form'><textarea id='diaryEntry' placeholder='Write your experience here'></textarea></form>`;
+        domString +=    `<form class='form'><textarea id='diaryEntry' placeholder='Write about your experience here'></textarea></form>`;
         domString +=    `<button class='submit'>Submit</button>`;
         domString += `</div>`;
         printToDom(domString, "card-holder");
@@ -66,13 +66,15 @@ for (let i = 0; i < allTheButtons.length; i++) {
         const countryName = e.target.parentNode.children[0].innerHTML;
         let domString = "";
         domString += `<div class="diary-card">`;
-        domString +=        `<button class="del-btn">Delete</button>`;
+        domString +=    `<button class="del-btn">Delete</button>`;
         domString +=    `<h1> ${countryName} </h1>`;
         domString +=    `<p> ${diaryEntry} </p>`;
         domString += `</div>`;
         diaryString.push(domString);
         printToDom(diaryString, "diary-container");
+        console.log("diary string", diaryString);
         allTheButtons[i].parentNode.children[2].children[0].value = "";
+        allTheButtons[i].parentNode.classList.add('visited');
         addDiaryListeners();
     });
 }
