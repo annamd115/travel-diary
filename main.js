@@ -46,7 +46,7 @@ function countryDomString (array) {
         domString += `<div class='country-card'>`;
         domString +=    `<h3> ${country.title}</h3>`;
         domString +=    `<img src="${country.image}">`;
-        domString +=    `<form id='form'><textarea id='diaryEntry' placeholder='Write your experience here'></textarea></form>`;
+        domString +=    `<form class='form'><textarea id='diaryEntry' placeholder='Write your experience here'></textarea></form>`;
         domString +=    `<button class='submit'>Submit</button>`;
         domString += `</div>`;
         printToDom(domString, "card-holder");
@@ -56,30 +56,33 @@ countryDomString(countriesArray);
 
 // ***********************Event Listeners************************ //
 
-const clearField = (el) => {
-    const clear = document.getElementById("form").reset();
-}
 
 const allTheButtons = document.getElementsByClassName('submit');
 
-const printDiaryCard = () => {
-    let diaryArray = [];
-    for (let i = 0; i < allTheButtons.length; i++) {
-        allTheButtons[i].addEventListener('click', (e) => {
-            const diaryEntry = e.target.parentNode.children[2].children[0].value;
-            console.log(diaryEntry);
-            const countryName = e.target.parentNode.children[0].innerHTML;
-            let domString = "";
-            domString += `<div class="diary-card">`;
-            domString +=    `<h1> ${countryName} </h1>`;
-            domString +=    `<p> ${diaryEntry} </p>`;
-            domString += `</div>`;
-            diaryArray.push(domString);
-            printToDom(diaryArray, "diary-container");
-            clearField();
-        });
-    }
+for (let i = 0; i < allTheButtons.length; i++) {
+    let diaryString = [];
+    allTheButtons[i].addEventListener('click', (e) => {
+        const diaryEntry = e.target.parentNode.children[2].children[0].value;
+        const countryName = e.target.parentNode.children[0].innerHTML;
+        let domString = "";
+        domString += `<div class="diary-card">`;
+        domString +=        `<button class="del-btn">Delete</button>`;
+        domString +=    `<h1> ${countryName} </h1>`;
+        domString +=    `<p> ${diaryEntry} </p>`;
+        domString += `</div>`;
+        diaryString.push(domString);
+        printToDom(diaryString, "diary-container");
+        allTheButtons[i].parentNode.children[2].children[0].value = "";
+        addDiaryListeners();
+    });
 }
-printDiaryCard();
 
+const deletePost = (event) => {
+    event.srcElement.parentElement.remove();
+}
 
+const addDiaryListeners = () => {
+    [...document.getElementsByClassName('del-btn')].forEach(btn => {
+        btn.addEventListener('click', deletePost);
+    });
+}

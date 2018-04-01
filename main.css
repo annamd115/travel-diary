@@ -1,13 +1,18 @@
 body{
     position: absolute;
-    background: lightsteelblue;
+    width: 100%;
+    background-image: url(/images/travel.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Great Vibes', cursive;
 }
 #main-heading{
     display: flex;
     justify-content: center;
-    font-family: 'Great Vibes', cursive;
     font-size: 70px;
-    text-emphasis: underline;
+    background: lightsteelblue;
 }
 .main-container{
     position: relative;
@@ -19,12 +24,12 @@ body{
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    width: 75%;
     margin: 0 auto;
     justify-content: center;
 }
 .country-card{
-    margin: 20px;
+    margin: 15px;
     padding: 10px;
     border: 5px solid lightblue;
     border-radius: 10%;
@@ -34,6 +39,7 @@ body{
 }
 .country-card h3{
     margin: 0 auto;
+    font-size: 30px;
 }
 .country-card img{
     width: 250px;
@@ -43,7 +49,7 @@ body{
 }
 .country-card textarea{
     width: 244px;
-    height: 50px;
+    height: 55px;
     overflow: scroll;
     resize: none;
 }
@@ -51,11 +57,24 @@ body{
     border: 5px solid lightblue;
     border-radius: 20px;
     position: relative;
-    width: 60%;
+    width: 50%;
     margin: 10px auto;
-    padding: 30px;
+    padding-left: 20px;
+    font-size: 20px;
     background: aliceblue;
 }
 .diary-card p{
     padding: 0 40px;;
+}
+.del-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: lightblue;
+    border-radius: 10%;
+}
+.submit{
+    border-radius: 10%;
+    background: lightblue;
+    border: 3px dotted lightsteelblue;
 }
